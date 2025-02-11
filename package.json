@@ -11,13 +11,21 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
+    "axios": "^1.7.9",
+    "formik": "^2.4.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "redux": "^5.0.1",
+    "styled-components": "^6.1.15",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@tanstack/eslint-plugin-query": "^5.66.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
+    "@types/styled-components": "^5.1.34",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.20.1",
     "eslint-plugin-react-hooks": "^5.0.0",
