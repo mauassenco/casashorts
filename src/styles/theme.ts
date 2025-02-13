@@ -4,10 +4,12 @@ export const theme: DefaultTheme = {
   colors: {
     primary: '#624DE3',
     secondary: '#ffffff',
-    background: '#E5E5E5',
+    third: '#E5E5E5',
+    fourth: '#c4c4c4',
     backgroundOverlay: '#1F2933',
-    text: '#1F2933',
-    accent: '#35424F',
+    title: '#1F2933',
+    text: '#35424F',
+    error: '#BB0A30',
   },
 
   fontFamily: {
@@ -24,8 +26,9 @@ export const theme: DefaultTheme = {
   },
   fontWeight: {
     thin: 300,
+    normal: 400,
     regular: 500,
-    medium: 600,
+    semibold: 600,
     bold: 700,
   },
   border: {

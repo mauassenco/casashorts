@@ -7,10 +7,12 @@ declare module 'styled-components' {
     colors: {
       primary: string;
       secondary: string;
-      background: string;
+      third: string;
+      fourth: string;
       backgroundOverlay: string;
+      title: string;
       text: string;
-      accent: string;
+      error: string;
     };
     //Fonts
     fontFamily: {
@@ -28,7 +30,8 @@ declare module 'styled-components' {
     fontWeight: {
       thin: number;
       regular: number;
-      medium: number;
+      normal: number;
+      semibold: number;
       bold: number;
     };
     // Borders
