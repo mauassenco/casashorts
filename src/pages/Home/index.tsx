@@ -1,5 +1,5 @@
-import React from 'react';
+import Hero from './sections/hero';
 
 export function Home() {
-  return <div>Home Route</div>;
+  return <Hero />;
 }

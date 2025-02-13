@@ -9,9 +9,12 @@ export const HeaderContainer = styled.header`
     align-items: center;
     height: 4rem;
     border-bottom: solid ${theme.colors.third} ${theme.border.medium};
+    padding: 0 1.5rem;
+
     @media (min-width: ${theme.breakpoints.desktop}) {
       height: 5.25rem;
       justify-content: space-between;
+      padding: 0 6rem;
     }
   `}
 `;
