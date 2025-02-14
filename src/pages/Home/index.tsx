@@ -1,5 +1,11 @@
+import Features from './sections/features';
 import Hero from './sections/hero';
 
-export function Home() {
-  return <Hero />;
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Features />
+    </>
+  );
 }

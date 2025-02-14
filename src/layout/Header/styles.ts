@@ -142,7 +142,7 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
 export const NavItem = styled.a`
   ${({ theme }) => css`
     text-decoration: none;
-    font-weight: ${theme.fontWeight.regular};
+    font-weight: ${theme.fontWeight.medium};
     display: flex;
     align-items: center;
     gap: 0.65rem;

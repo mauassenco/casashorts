@@ -53,7 +53,7 @@ export const HeroContainer = styled.section`
 
     p {
       font-size: ${theme.fontSize.small};
-      font-weight: ${theme.fontWeight.thin};
+      font-weight: ${theme.fontWeight.medium};
       color: ${theme.colors.text};
       margin: 0;
     }

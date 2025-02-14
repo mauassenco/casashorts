@@ -1,4 +1,5 @@
 import HeroImage from '../../../../assets/images/svg/hero-image.svg';
+
 // Styles
 import * as Styles from './styles';
 

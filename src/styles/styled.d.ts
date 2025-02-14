@@ -30,8 +30,8 @@ declare module 'styled-components' {
     };
     fontWeight: {
       thin: number;
-      regular: number;
       normal: number;
+      medium: number;
       semibold: number;
       bold: number;
     };

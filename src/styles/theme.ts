@@ -28,7 +28,7 @@ export const theme: DefaultTheme = {
   fontWeight: {
     thin: 300,
     normal: 400,
-    regular: 500,
+    medium: 500,
     semibold: 600,
     bold: 700,
   },

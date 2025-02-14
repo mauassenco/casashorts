@@ -7,7 +7,7 @@ export const Button = styled.button`
     border: none;
     border-radius: 4px;
     color: ${theme.colors.secondary};
-    font-weight: ${theme.fontWeight.thin};
+    font-weight: ${theme.fontWeight.medium};
     font-size: ${theme.fontSize.xsmall};
     transition: all ease-in-out 0.2s;
     width: 100%;
