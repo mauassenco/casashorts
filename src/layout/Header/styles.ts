@@ -9,9 +9,12 @@ export const HeaderContainer = styled.header`
     align-items: center;
     height: 4rem;
     border-bottom: solid ${theme.colors.third} ${theme.border.medium};
+    padding: 0 1.5rem;
+
     @media (min-width: ${theme.breakpoints.desktop}) {
       height: 5.25rem;
       justify-content: space-between;
+      padding: 0 6rem;
     }
   `}
 `;
@@ -139,7 +142,7 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
 export const NavItem = styled.a`
   ${({ theme }) => css`
     text-decoration: none;
-    font-weight: ${theme.fontWeight.regular};
+    font-weight: ${theme.fontWeight.medium};
     display: flex;
     align-items: center;
     gap: 0.65rem;
@@ -174,7 +177,7 @@ export const UserHeader = styled.div`
       }
 
       h3 {
-        font-weight: ${theme.fontWeight.regular};
+        font-weight: ${theme.fontWeight.medium};
       }
 
       button > p {

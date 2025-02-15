@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
     primary: '#624DE3',
     secondary: '#ffffff',
     third: '#E5E5E5',
+    thirdOpacity35: 'rgba(229, 229, 229, 0.35)',
     fourth: '#c4c4c4',
     backgroundOverlay: '#1F2933',
     title: '#1F2933',
@@ -27,7 +28,7 @@ export const theme: DefaultTheme = {
   fontWeight: {
     thin: 300,
     normal: 400,
-    regular: 500,
+    medium: 500,
     semibold: 600,
     bold: 700,
   },

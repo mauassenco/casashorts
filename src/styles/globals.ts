@@ -13,9 +13,13 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-user-drag: none;
   }
 
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
   header, main, footer {
     margin: 0 auto;
-    max-width: 1280px;
-    padding: 0 6rem;
+    max-width: 1366px;
     }
 `;

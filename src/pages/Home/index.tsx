@@ -1,5 +1,11 @@
-import React from 'react';
+import Features from './sections/features';
+import Hero from './sections/hero';
 
-export function Home() {
-  return <div>Home Route</div>;
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Features />
+    </>
+  );
 }

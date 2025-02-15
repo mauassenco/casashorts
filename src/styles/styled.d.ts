@@ -8,6 +8,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       third: string;
+      thirdOpacity35: string;
       fourth: string;
       backgroundOverlay: string;
       title: string;
@@ -29,8 +30,8 @@ declare module 'styled-components' {
     };
     fontWeight: {
       thin: number;
-      regular: number;
       normal: number;
+      medium: number;
       semibold: number;
       bold: number;
     };
