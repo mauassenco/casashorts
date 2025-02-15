@@ -21,6 +21,7 @@ declare module 'styled-components' {
       secondary: string;
     };
     fontSize: {
+      xxsmall: string;
       xsmall: string;
       small: string;
       regular: string;

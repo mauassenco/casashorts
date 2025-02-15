@@ -18,6 +18,7 @@ export const theme: DefaultTheme = {
     secondary: 'serif',
   },
   fontSize: {
+    xxsmall: '12px',
     xsmall: '14px',
     small: '16px',
     regular: '18px',
