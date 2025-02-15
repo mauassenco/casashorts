@@ -15,7 +15,8 @@ export const Button = styled.button`
     max-width: 16.125rem;
 
     &:hover {
-      background-color: ${theme.colors.third};
+      background-color: ${theme.colors.primary};
+      opacity: 0.9;
     }
   `}
 `;

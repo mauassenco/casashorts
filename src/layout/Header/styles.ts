@@ -177,7 +177,7 @@ export const UserHeader = styled.div`
       }
 
       h3 {
-        font-weight: ${theme.fontWeight.regular};
+        font-weight: ${theme.fontWeight.medium};
       }
 
       button > p {
