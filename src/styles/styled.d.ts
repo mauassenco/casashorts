@@ -31,7 +31,7 @@ declare module 'styled-components' {
     };
     fontWeight: {
       thin: number;
-      normal: number;
+      regular: number;
       medium: number;
       semibold: number;
       bold: number;

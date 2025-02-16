@@ -35,11 +35,20 @@ export const HamburgerMenuButton = styled.button`
     right: 1.75rem;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
 
     @media (min-width: ${theme.breakpoints.desktop}) {
       display: none;
     }
   `}
+`;
+export const ReturnArrow = styled.div`
+  position: absolute;
+  background: none;
+  left: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 `;
 
 export const Logo = styled.div`

@@ -1,5 +1,6 @@
-import React from 'react';
+// Styles
+import * as Styles from './styles';
 
 export default function SignIn() {
-  return <div>SignIn</div>;
+  return <Styles.SignInContainer>SignIn</Styles.SignInContainer>;
 }
