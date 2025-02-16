@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 
+import Logo from '../../components/Logo';
+
 import GoogleIcon from '../../assets/icons/svg/icon-google.svg';
 import SiginUp from '../../assets/images/svg/signup.svg';
 
 // Styles
 import * as Styles from './styles';
-import Logo from '../../components/Logo';
 
 export default function SignUp() {
   return (

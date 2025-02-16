@@ -29,7 +29,7 @@ export const SignUpContainer = styled.div`
       flex-direction: row-reverse;
       justify-content: space-between;
       align-items: center;
-      padding: 6.25rem 5.25rem 4rem;
+      padding: 6.25rem 5.25rem 8.25rem;
 
       div > img {
         width: 34.24rem;
