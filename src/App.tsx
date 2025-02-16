@@ -15,6 +15,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
+
         <Router>
           <Header />
           <main>

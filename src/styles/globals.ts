@@ -16,6 +16,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    position: relative;
+
   }
 
   header, main, footer {
