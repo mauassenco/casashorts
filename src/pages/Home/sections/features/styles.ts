@@ -77,7 +77,7 @@ export const CardItem = styled.div`
 
     p {
       font-size: ${theme.fontSize.xsmall};
-      font-weight: ${theme.fontWeight.normal};
+      font-weight: ${theme.fontWeight.regular};
     }
 
     img {

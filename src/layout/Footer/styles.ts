@@ -9,6 +9,10 @@ export const FooterContainer = styled.footer`
     width: 100%;
     height: 2.5rem;
     padding: 0 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
 
     p {
       color: ${theme.colors.secondary};
