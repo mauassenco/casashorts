@@ -4,9 +4,9 @@ import React from 'react';
 import * as Styles from './styles';
 
 interface IButton {
-  label: string;
+  children: React.ReactNode;
   onClick?: () => void;
 }
-export default function Button({ label }: IButton) {
-  return <Styles.Button>{label}</Styles.Button>;
+export default function Button({ children }: IButton) {
+  return <Styles.Button>{children}</Styles.Button>;
 }

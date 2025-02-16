@@ -1,9 +1,9 @@
 import HeroImage from '../../../../assets/images/svg/hero-image.svg';
+import Cta from '../../../../components/Cta';
 
 // Styles
 import * as Styles from './styles';
 
-import Button from '../../../../components/Button';
 export default function Hero() {
   return (
     <Styles.HeroContainer>
@@ -13,7 +13,7 @@ export default function Hero() {
           Deixe seus links mais curtos para tornar mensagens, posts e e-mails mais acessíveis, de forma simples e
           rápida.
         </p>
-        <Button label="Criar conta" />
+        <Cta label="Criar conta" destination="/sign-up" />
       </div>
       <div className="">
         <img src={HeroImage} alt="" />

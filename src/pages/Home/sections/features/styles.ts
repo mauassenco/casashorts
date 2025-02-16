@@ -33,7 +33,7 @@ export const FeaturesContainer = styled.section`
       }
 
       footer {
-        padding: 4.75rem 0;
+        padding: 2.35rem 0;
       }
     }
   `};

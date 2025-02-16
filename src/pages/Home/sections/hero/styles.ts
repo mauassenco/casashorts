@@ -10,7 +10,7 @@ export const HeroContainer = styled.section`
     padding: 2.2rem 1.5rem;
     background: ${theme.colors.thirdOpacity35};
 
-    div {
+    & > div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -40,7 +40,7 @@ export const HeroContainer = styled.section`
       }
     }
 
-    div:first-of-type {
+    & > div:first-of-type {
       max-width: 516px;
     }
 

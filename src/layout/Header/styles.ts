@@ -21,7 +21,8 @@ export const HeaderContainer = styled.header`
 
 export const NavContainer = styled.nav<{ $hasUser: boolean }>`
   ${({ theme, $hasUser }) => css`
-    a:last-child {
+    li:last-child a,
+    li:last-child {
       color: ${$hasUser ? theme.colors.error : theme.colors.primary};
     }
   `}
@@ -43,19 +44,21 @@ export const HamburgerMenuButton = styled.button`
 
 export const Logo = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
-    position: relative;
-    color: ${theme.colors.title};
-    font-size: ${theme.fontSize.regular};
-    font-weight: ${theme.fontWeight.semibold};
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      position: relative;
+      color: ${theme.colors.title};
+      font-size: ${theme.fontSize.regular};
+      font-weight: ${theme.fontWeight.semibold};
 
-    @media (max-width: ${theme.breakpoints.tablet}) {
-      justify-content: center;
+      @media (max-width: ${theme.breakpoints.tablet}) {
+        justify-content: center;
+      }
     }
-
     p {
       color: ${theme.colors.title};
     }
@@ -74,10 +77,10 @@ export const NavMenu = styled.nav`
   `}
 `;
 
-export const HamburgerNavMenu = styled.div<{ $isOpen: boolean }>`
+export const HamburgerNavMenu = styled.ul<{ $isOpen: boolean }>`
   ${({ theme, $isOpen }) => css`
     position: fixed;
-    top: 0;
+    top: -20px;
     right: ${$isOpen ? '0' : '-100%'};
     display: flex;
     flex-direction: column;
@@ -91,13 +94,19 @@ export const HamburgerNavMenu = styled.div<{ $isOpen: boolean }>`
     transition: right 0.3s ease-in-out;
     z-index: 1;
 
+    a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     @media (min-width: ${theme.breakpoints.desktop}) {
       display: none;
     }
   `}
 `;
 
-export const DesktopNavMenu = styled.div<{ $isOpen: boolean }>`
+export const DesktopNavMenu = styled.ul<{ $isOpen: boolean }>`
   ${({ theme, $isOpen }) => css`
     display: none;
 
@@ -115,11 +124,17 @@ export const DesktopNavMenu = styled.div<{ $isOpen: boolean }>`
       background-color: ${theme.colors.secondary};
       font-size: ${theme.fontSize.small};
       transition: all 0.3s ease-in-out;
-      padding: 1.6rem;
+      padding: 1.3rem;
       gap: 1.6rem;
 
-      a {
+      li {
         margin: 0;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
       }
     }
   `}
@@ -139,13 +154,22 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
   `}
 `;
 
-export const NavItem = styled.a`
+export const NavItemContainer = styled.ul`
+  display: flex;
+`;
+
+export const NavItem = styled.li`
   ${({ theme }) => css`
+    list-style: none;
     text-decoration: none;
     font-weight: ${theme.fontWeight.medium};
     display: flex;
     align-items: center;
     gap: 0.65rem;
+
+    a {
+      text-decoration: none;
+    }
 
     @media (min-width: ${theme.breakpoints.desktop}) {
       margin-left: 2.8rem;
@@ -156,6 +180,7 @@ export const NavItem = styled.a`
 export const UserHeader = styled.div`
   ${({ theme }) => css`
     display: none;
+
     @media (min-width: ${theme.breakpoints.desktop}) {
       position: relative;
       display: flex;

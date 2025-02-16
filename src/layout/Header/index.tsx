@@ -7,16 +7,23 @@ import LinkIconDark from '../../assets/icons/svg/icon-link-dark.svg';
 
 // Styles
 import * as Styles from './styles';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
-  const [desktopMenuIsOpen, setDesktopMenuIsOpen] = useState(false);
-  // TODO: How to check if user is logged
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hasUser, setHasUser] = useState(false);
   const user = {
     name: 'Silvinha',
     image: '',
+  };
+
+  const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
+  const [desktopMenuIsOpen, setDesktopMenuIsOpen] = useState(false);
+  // TODO: How to check if user is logged
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [hasUser, setHasUser] = useState(false);
+
+  const handleMenuItemClick = () => {
+    setHamburgerMenuIsOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -31,10 +38,12 @@ const Header = () => {
   return (
     <Styles.HeaderContainer>
       <Styles.Logo>
-        <img src={LinkIconDark} alt="Logo" />
-        <p>
-          Casa<span>Shorts</span>
-        </p>
+        <Link to="/">
+          <img src={LinkIconDark} alt="Logo" />
+          <p>
+            Casa<span>Shorts</span>
+          </p>
+        </Link>
       </Styles.Logo>
       <Styles.NavContainer $hasUser={hasUser}>
         {/* Mobile/Tablet Menu */}
@@ -44,22 +53,33 @@ const Header = () => {
         <Styles.HamburgerNavMenu $isOpen={hamburgerMenuIsOpen}>
           {hasUser ? (
             <>
-              <Styles.NavItem href="#">
-                <img src={PersonIcon} alt="" />
-                Minha conta
+              <Styles.NavItem>
+                <Link to="/profile">
+                  <img src={PersonIcon} alt="" />
+                  Minha conta
+                </Link>
               </Styles.NavItem>
-              <Styles.NavItem href="#">
+              <Styles.NavItem>
                 <img src={LogoutIcon} alt="" />
                 Sair
               </Styles.NavItem>
             </>
           ) : (
             <>
-              <Styles.NavItem href="#">Criar conta</Styles.NavItem>
-              <Styles.NavItem href="#">Entrar</Styles.NavItem>
+              <Styles.NavItem>
+                <Link to="/sign-up" onClick={handleMenuItemClick}>
+                  Criar conta
+                </Link>
+              </Styles.NavItem>
+              <Styles.NavItem>
+                <Link to="/sign-in" onClick={handleMenuItemClick}>
+                  Entrar
+                </Link>
+              </Styles.NavItem>
             </>
           )}
         </Styles.HamburgerNavMenu>
+
         {/* Desktop Menu */}
         <Styles.NavMenu>
           {hasUser ? (
@@ -76,22 +96,34 @@ const Header = () => {
                   )}
                 </button>
                 <Styles.DesktopNavMenu $isOpen={desktopMenuIsOpen}>
-                  <Styles.NavItem href="#">
-                    <img src={PersonIcon} alt="" />
-                    Minha conta
+                  <Styles.NavItem>
+                    <Link to="" onClick={handleMenuItemClick}>
+                      <img src={PersonIcon} alt="" />
+                      Minha conta
+                    </Link>
                   </Styles.NavItem>
-                  <Styles.NavItem href="#">
-                    <img src={LogoutIcon} alt="" />
-                    Sair
+                  <Styles.NavItem>
+                    <Link to="" onClick={handleMenuItemClick}>
+                      <img src={LogoutIcon} alt="" />
+                      Sair
+                    </Link>
                   </Styles.NavItem>
                 </Styles.DesktopNavMenu>
               </Styles.UserHeader>
             </>
           ) : (
-            <>
-              <Styles.NavItem href="#">Criar conta</Styles.NavItem>
-              <Styles.NavItem href="#">Entrar</Styles.NavItem>
-            </>
+            <Styles.NavItemContainer>
+              <Styles.NavItem>
+                <Link to="/sign-up" onClick={handleMenuItemClick}>
+                  Criar conta
+                </Link>
+              </Styles.NavItem>
+              <Styles.NavItem>
+                <Link to="/sign-in" onClick={handleMenuItemClick}>
+                  Entrar
+                </Link>
+              </Styles.NavItem>
+            </Styles.NavItemContainer>
           )}
         </Styles.NavMenu>
       </Styles.NavContainer>

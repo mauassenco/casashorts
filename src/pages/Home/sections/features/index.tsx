@@ -1,3 +1,5 @@
+import Cta from '../../../../components/Cta';
+
 import IconLink from '../../../../assets/icons/svg/icon-link.svg';
 import IconEdit from '../../../../assets/icons/svg/icon-edit.svg';
 import IconNotification from '../../../../assets/icons/svg/icon-notification.svg';
@@ -5,7 +7,6 @@ import IconShare from '../../../../assets/icons/svg/icon-share.svg';
 
 // Styles
 import * as Styles from './styles';
-import Button from '../../../../components/Button';
 
 export default function Features() {
   return (
@@ -58,7 +59,7 @@ export default function Features() {
         </Styles.CardItem>
       </Styles.FeaturesCards>
       <footer>
-        <Button label="Criar conta" />
+        <Cta label="Criar conta" destination="/sign-up" />
       </footer>
     </Styles.FeaturesContainer>
   );
