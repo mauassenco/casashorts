@@ -7,6 +7,7 @@ export const theme: DefaultTheme = {
     third: '#E5E5E5',
     thirdOpacity35: 'rgba(229, 229, 229, 0.35)',
     fourth: '#c4c4c4',
+    fifth: '#4D5C6C',
     backgroundOverlay: '#1F2933',
     title: '#1F2933',
     text: '#35424F',
@@ -27,9 +28,9 @@ export const theme: DefaultTheme = {
     xlarge: '32px',
   },
   fontWeight: {
-    thin: 300,
-    regular: 400,
-    medium: 500,
+    light: 300,
+    medium: 400,
+    regular: 500,
     semibold: 600,
     bold: 700,
   },
@@ -40,6 +41,7 @@ export const theme: DefaultTheme = {
   borderRadius: {
     small: '4px',
     medium: '8px',
+    large: '16px',
   },
   breakpoints: {
     mobile: '576px',
