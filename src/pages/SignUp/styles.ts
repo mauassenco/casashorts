@@ -19,12 +19,6 @@ export const SignUpContainer = styled.div`
       margin-bottom: 1.875rem;
     }
 
-    p {
-      color: ${theme.colors.text};
-      font-size: ${theme.fontSize.xsmall};
-      font-weight: ${theme.fontWeight.medium};
-    }
-
     @media (min-width: ${theme.breakpoints.desktop}) {
       flex-direction: row-reverse;
       justify-content: space-between;
@@ -62,7 +56,7 @@ export const GoogleButton = styled.div`
   `}
 `;
 
-export const Etc = styled.div`
+export const LogoContainer = styled.div`
   display: none;
 
   @media (min-width: ${theme.breakpoints.desktop}) {

@@ -10,6 +10,7 @@ declare module 'styled-components' {
       third: string;
       thirdOpacity35: string;
       fourth: string;
+      fifth: string;
       backgroundOverlay: string;
       title: string;
       text: string;
@@ -30,9 +31,9 @@ declare module 'styled-components' {
       xlarge: string;
     };
     fontWeight: {
-      thin: number;
-      regular: number;
+      light: number;
       medium: number;
+      regular: number;
       semibold: number;
       bold: number;
     };
@@ -44,6 +45,7 @@ declare module 'styled-components' {
     borderRadius: {
       small: string;
       medium: string;
+      large: string;
     };
     // Shadows
     boxShadow: string;
