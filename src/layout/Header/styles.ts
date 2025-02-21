@@ -18,11 +18,11 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const NavContainer = styled.nav<{ $hasUser: boolean }>`
-  ${({ theme, $hasUser }) => css`
+export const NavContainer = styled.nav<{ $currentUser: boolean }>`
+  ${({ theme, $currentUser }) => css`
     li:last-child a,
     li:last-child {
-      color: ${$hasUser ? theme.colors.error : theme.colors.primary};
+      color: ${$currentUser ? theme.colors.error : theme.colors.primary};
     }
   `}
 `;

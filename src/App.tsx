@@ -9,6 +9,7 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import MyLinks from './pages/MyLinks';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/sign-in" element={<SignIn />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/my-links" element={<MyLinks />} />
             </Routes>
           </main>
           <Footer />

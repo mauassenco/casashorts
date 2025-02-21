@@ -6,11 +6,11 @@ import Modal from '../../components/Modal';
 import Cta from '../../components/Cta';
 
 import GoogleIcon from '../../assets/icons/svg/icon-google.svg';
+import FlexContainer from '../../components/FlexContainer';
 import SignInImage from '../../assets/images/svg/signin.svg';
 
 // Styles
 import * as Styles from './styles';
-import FlexContainer from '../../components/FlexContainer';
 
 export default function SignIn() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +38,7 @@ export default function SignIn() {
         <div>
           <h3>Acesse sua conta</h3>
           <Styles.GoogleButton>
-            <Link to="/">
+            <Link to="/my-links">
               <img src={GoogleIcon} alt="" />
               <p>Entrar com o Google</p>
             </Link>

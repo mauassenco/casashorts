@@ -8,6 +8,7 @@ export const theme: DefaultTheme = {
     thirdOpacity35: 'rgba(229, 229, 229, 0.35)',
     fourth: '#c4c4c4',
     fifth: '#4D5C6C',
+    seventh: '#EFEFEF',
     backgroundOverlay: '#1F2933',
     title: '#1F2933',
     text: '#35424F',

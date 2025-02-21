@@ -1,6 +1,6 @@
 import { styled, css } from 'styled-components';
 
-export const Button = styled.button`
+export const Button = styled.button<{ type?: 'submit' | 'button' }>`
   ${({ theme }) => css`
     cursor: pointer;
     background-color: ${theme.colors.primary};

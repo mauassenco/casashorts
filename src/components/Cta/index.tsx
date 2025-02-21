@@ -30,7 +30,6 @@ export default function Cta({ label, destination, onClick, variant = 'default' }
   return (
     <Styles.Cta $variant={variant}>
       {destination ? <Link to={destination}>{label}</Link> : <span onClick={onClick}>{label}</span>}
-      {/* <Link to={destination}>{label}</Link> */}
     </Styles.Cta>
   );
 }

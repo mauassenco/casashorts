@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Logo from '../../components/Logo';
 
@@ -12,18 +13,21 @@ import ReturnArrow from '../../assets/icons/svg/icon-arrow.svg';
 // Styles
 import * as Styles from './styles';
 
+import rootReducer from '../../redux/root-reducer';
 const Header = () => {
   const user = {
     name: 'Silvinha',
     image: '',
   };
 
+  // const { currentUser } = useSelector((rootReducer) => rootReducer.userReducer);
+  const { currentUser } = useSelector((state: ReturnType<typeof rootReducer>) => state.userReducer);
+
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [desktopMenuIsOpen, setDesktopMenuIsOpen] = useState(false);
   // TODO: How to check if user is logged
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hasUser, setHasUser] = useState(false);
+  // const [hasUser, setHasUser] = useState(false);
 
   const location = useLocation();
 
@@ -42,7 +46,7 @@ const Header = () => {
   return (
     <Styles.HeaderContainer>
       <Logo />
-      {location.pathname === '/sign-in' || location.pathname === '/sign-up' ? (
+      {location.pathname !== '/' ? (
         <Styles.ReturnArrow>
           <Link to="/">
             <img src={ReturnArrow} alt="Hamburger Menu" />
@@ -50,13 +54,13 @@ const Header = () => {
         </Styles.ReturnArrow>
       ) : (
         <>
-          <Styles.NavContainer $hasUser={hasUser}>
+          <Styles.NavContainer $currentUser={!!currentUser}>
             {/* Mobile/Tablet Menu */}
             <Styles.HamburgerMenuButton onClick={toggleMobileMenu}>
               <img src={HamburgerMenuIcon} alt="Hamburger Menu" />
             </Styles.HamburgerMenuButton>
             <Styles.HamburgerNavMenu $isOpen={hamburgerMenuIsOpen}>
-              {hasUser ? (
+              {currentUser ? (
                 <>
                   <Styles.NavItem>
                     <Link to="/profile">
@@ -87,7 +91,7 @@ const Header = () => {
 
             {/* Desktop Menu */}
             <Styles.NavMenu>
-              {hasUser ? (
+              {currentUser ? (
                 <>
                   <Styles.UserHeader>
                     <h3>

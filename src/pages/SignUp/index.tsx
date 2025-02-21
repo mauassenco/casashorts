@@ -41,7 +41,7 @@ export default function SignUp() {
           <h3>Crie uma nova conta</h3>
           {/* Google Btn */}
           <Styles.GoogleButton>
-            <Link to="/">
+            <Link to="">
               <img src={GoogleIcon} alt="" />
               <p>Cadastrar com o Google</p>
             </Link>

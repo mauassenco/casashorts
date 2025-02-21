@@ -39,7 +39,7 @@ export const SignUpContainer = styled.div`
 export const GoogleButton = styled.div`
   ${({ theme }) => css`
     width: 19.5rem;
-    height: 2.875rem;
+    min-height: 2.875rem;
     border-radius: ${theme.borderRadius.small};
     border: solid 1px ${theme.colors.primary};
 
