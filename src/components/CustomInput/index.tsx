@@ -9,6 +9,8 @@ interface InputItemProps {
   label?: string;
   placeholder?: string;
   required?: boolean;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function CustomInput({ name, type, label, placeholder, required }: InputItemProps) {

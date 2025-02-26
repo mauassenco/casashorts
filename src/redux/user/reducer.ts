@@ -1,18 +1,42 @@
+import { UserActionTypes } from './action-types';
+
 const initialState = {
-  currentUser: true,
+  currentUser: null,
 };
 
+interface IuserItem {
+  id: string;
+  url: string;
+  dtCriacao: string;
+  titulo: string;
+  urlEncurtada: string;
+  qtdCliques: number;
+}
+interface ICurrentUser {
+  userId: string;
+  name: string;
+  image: string;
+  items: IuserItem[];
+}
 interface Action {
   type: string;
-  payload: string | boolean;
+  payload: ICurrentUser | null;
 }
+
 const userReducer = (state = initialState, action: Action) => {
   switch (action.type) {
-    case 'SET_CURRENT_USER':
+    case UserActionTypes.LOGIN:
       return {
         ...state,
         currentUser: action.payload,
       };
+
+    case UserActionTypes.LOGOUT:
+      return {
+        ...state,
+        currentUser: null,
+      };
+
     default:
       return state;
   }

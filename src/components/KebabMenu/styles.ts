@@ -20,9 +20,9 @@ export const KebabMenu = styled.ul`
   border: 1px solid #ccc;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   z-index: 1;
-  min-width: 150px;
+  min-width: 190px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 
@@ -35,6 +35,10 @@ export const KebabMenu = styled.ul`
 export const KebabMenuItem = styled.li`
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
   &:hover {
     background-color: #f0f0f0;
   }

@@ -1,71 +1,49 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type rootReducer from '../../../../redux/root-reducer';
 
 import LinkItem from '../Linkitem';
+
 // Styles
 import * as Styles from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { LinkActionTypes } from '../../../../redux/link/action-types';
 
-const shortedLinks = [
-  {
-    id: '628b924eba7ed84b3d76e1af',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'string',
-    url: 'string',
-    dtCriacao: 'null',
-    urlEncurtada: 'string123344',
-    qtdCliques: 0,
-  },
-  {
-    id: '628b9262ba7ed84b3d76e1b0',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'string',
-    url: 'string',
-    dtCriacao: 'null',
-    urlEncurtada: 'ZKEGBIG4BJAHI24',
-    qtdCliques: 0,
-  },
-  {
-    id: '63ea2d69fc8c60624e139516',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'teste',
-    url: 'testeUrl',
-    dtCriacao: 'null',
-    urlEncurtada: 'testeUrlEncurtada',
-    qtdCliques: 0,
-  },
-  {
-    id: '63ea2d9afc8c60624e139517',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'um titulo',
-    url: 'umaUrl',
-    dtCriacao: 'null',
-    urlEncurtada: 'umaUrlEncurtada',
-    qtdCliques: 0,
-  },
-  {
-    id: '63ea2dadfc8c60624e139518',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'aaaa',
-    url: 'aaaa',
-    dtCriacao: 'null',
-    urlEncurtada: 'aa',
-    qtdCliques: 0,
-  },
-  {
-    id: '63ea2db8fc8c60624e139519',
-    idConta: '628b910dba7ed84b3d76e1ae',
-    titulo: 'bb3',
-    url: 'bb3',
-    dtCriacao: 'null',
-    urlEncurtada: 'bb3',
-    qtdCliques: 2,
-  },
-];
-
+interface IuserItem {
+  id: string;
+  url: string;
+  dtCriacao: string;
+  titulo: string;
+  urlEncurtada: string;
+  qtdCliques: number;
+}
 export default function LinkTable() {
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
+  const { currentUser } = useSelector((state: ReturnType<typeof rootReducer>) => state.userReducer);
+
+  const dispatch = useDispatch();
+
+  const shortedLinks = currentUser?.items.data.items;
 
   const handleMenuClick = (id: string) => {
     setOpenMenuId((prevState) => (prevState === id ? null : id));
+  };
+
+  const handleEditClick = (link: IuserItem) => {
+    dispatch({
+      type: LinkActionTypes.SELECTED_LINK,
+      payload: link,
+    });
+    setOpenMenuId(null);
+  };
+
+  const handleCopyClick = (link: IuserItem) => {
+    navigator.clipboard.writeText(link.urlEncurtada);
+    setOpenMenuId(null);
+  };
+
+  const handleDeleteClick = (link: IuserItem) => {
+    console.log(link.id);
+    setOpenMenuId(null);
   };
 
   return (
@@ -91,12 +69,15 @@ export default function LinkTable() {
           <p>Você ainda não possui links encurtados</p>
         ) : (
           <>
-            {shortedLinks.map((link) => (
+            {shortedLinks.map((link: IuserItem) => (
               <Styles.TableRow key={link.id}>
                 <LinkItem
                   urlEncurtada={`shorts.casa/${link.urlEncurtada}`}
                   isOpen={openMenuId === link.id}
                   onMenuClick={() => handleMenuClick(link.id)}
+                  onEditClick={() => handleEditClick(link)}
+                  onCopyClick={() => handleCopyClick(link)}
+                  onDeleteClick={() => handleDeleteClick(link)}
                 />
               </Styles.TableRow>
             ))}

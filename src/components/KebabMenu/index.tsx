@@ -1,3 +1,9 @@
+import OpenIcon from '../../assets/icons/svg/icon-open_in_new.svg';
+import EditIcon from '../../assets/icons/svg/icon-edit-black.svg';
+import CopyIcon from '../../assets/icons/svg/icon-copy.svg';
+import DeleteIcon from '../../assets/icons/svg/icon-delete.svg';
+import QrIcon from '../../assets/icons/svg/icon-qr_code_scanner.svg';
+
 import * as Styles from './styles';
 
 interface KebabMenuProps {
@@ -17,6 +23,7 @@ export function KebabMenu({ link, onEdit, onCopy, onDelete, onQrCode }: KebabMen
             window.open(link, '_blank');
           }}
         >
+          <img src={OpenIcon} alt="Abrir Link" />
           Acessar link
         </Styles.KebabMenuItem>
         <Styles.KebabMenuItem
@@ -24,6 +31,7 @@ export function KebabMenu({ link, onEdit, onCopy, onDelete, onQrCode }: KebabMen
             onEdit();
           }}
         >
+          <img src={EditIcon} alt="Editar Link" />
           Editar
         </Styles.KebabMenuItem>
         <Styles.KebabMenuItem
@@ -31,6 +39,7 @@ export function KebabMenu({ link, onEdit, onCopy, onDelete, onQrCode }: KebabMen
             onCopy();
           }}
         >
+          <img src={CopyIcon} alt="Copiar Link" />
           Copiar
         </Styles.KebabMenuItem>
         <Styles.KebabMenuItem
@@ -38,6 +47,7 @@ export function KebabMenu({ link, onEdit, onCopy, onDelete, onQrCode }: KebabMen
             onDelete();
           }}
         >
+          <img src={DeleteIcon} alt="Deletar Link" />
           Excluir
         </Styles.KebabMenuItem>
         <Styles.KebabMenuItem
@@ -45,6 +55,7 @@ export function KebabMenu({ link, onEdit, onCopy, onDelete, onQrCode }: KebabMen
             onQrCode();
           }}
         >
+          <img src={QrIcon} alt="Deletar Link" />
           QR Code
         </Styles.KebabMenuItem>
       </Styles.KebabMenu>

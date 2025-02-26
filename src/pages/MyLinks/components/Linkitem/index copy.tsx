@@ -10,18 +10,12 @@ interface ILinkItem {
   urlEncurtada: string;
   isOpen: boolean;
   onMenuClick: () => void;
-  onEditClick: () => void;
-  onCopyClick: () => void;
-  onDeleteClick: () => void;
 }
-export default function LinkItem({
-  urlEncurtada,
-  isOpen,
-  onMenuClick,
-  onEditClick,
-  onCopyClick,
-  onDeleteClick,
-}: ILinkItem) {
+export default function LinkItem({ urlEncurtada, isOpen, onMenuClick }: ILinkItem) {
+  const handleEditClick = () => {
+    console.log('Edit clicked');
+  };
+
   return (
     <Styles.LinkItemContainer>
       <div>
@@ -36,9 +30,9 @@ export default function LinkItem({
         {isOpen && (
           <Styles.KebabMenu $isOpen={isOpen}>
             <KebabMenu
-              onEdit={onEditClick}
-              onCopy={onCopyClick}
-              onDelete={onDeleteClick}
+              onEdit={handleEditClick}
+              onCopy={() => console.log('Copy clicked')}
+              onDelete={() => console.log('Delete clicked')}
               onQrCode={() => console.log('QR Code clicked')}
             />
           </Styles.KebabMenu>

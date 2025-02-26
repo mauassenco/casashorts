@@ -165,12 +165,15 @@ export const NavItem = styled.li`
   list-style: none;
   text-decoration: none;
   font-weight: ${theme.fontWeight.medium};
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
 
   a {
     text-decoration: none;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
   }
 
   @media (min-width: ${theme.breakpoints.desktop}) {

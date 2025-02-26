@@ -47,15 +47,22 @@ export const GoogleButton = styled.div`
     border-radius: ${theme.borderRadius.small};
     border: solid 1px ${theme.colors.primary};
 
-    a {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
 
     p {
       font-family: ${theme.fontFamily.secondary};
+    }
+
+    img {
+      max-width: 1.5rem;
+    }
+
+    button {
+      all: inherit;
+      cursor: pointer;
     }
   `}
 `;
