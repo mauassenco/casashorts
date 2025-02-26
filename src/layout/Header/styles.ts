@@ -18,11 +18,11 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const NavContainer = styled.nav<{ $hasUser: boolean }>`
-  ${({ theme, $hasUser }) => css`
+export const NavContainer = styled.nav<{ $currentUser: boolean }>`
+  ${({ theme, $currentUser }) => css`
     li:last-child a,
     li:last-child {
-      color: ${$hasUser ? theme.colors.error : theme.colors.primary};
+      color: ${$currentUser ? theme.colors.error : theme.colors.primary};
     }
   `}
 `;
@@ -165,12 +165,15 @@ export const NavItem = styled.li`
   list-style: none;
   text-decoration: none;
   font-weight: ${theme.fontWeight.medium};
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
 
   a {
     text-decoration: none;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
   }
 
   @media (min-width: ${theme.breakpoints.desktop}) {

@@ -11,6 +11,7 @@ declare module 'styled-components' {
       thirdOpacity35: string;
       fourth: string;
       fifth: string;
+      seventh: string;
       backgroundOverlay: string;
       title: string;
       text: string;

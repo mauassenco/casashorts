@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { googleLogout } from '@react-oauth/google';
 
 import Logo from '../../components/Logo';
 
@@ -12,18 +15,22 @@ import ReturnArrow from '../../assets/icons/svg/icon-arrow.svg';
 // Styles
 import * as Styles from './styles';
 
+import rootReducer from '../../redux/root-reducer';
+import { UserActionTypes } from '../../redux/user/action-types';
 const Header = () => {
-  const user = {
-    name: 'Silvinha',
-    image: '',
+  const { currentUser } = useSelector((state: ReturnType<typeof rootReducer>) => state.userReducer);
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch({
+      type: UserActionTypes.LOGOUT,
+    });
+    googleLogout();
+    handleMenuItemClick();
   };
 
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false);
   const [desktopMenuIsOpen, setDesktopMenuIsOpen] = useState(false);
-  // TODO: How to check if user is logged
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hasUser, setHasUser] = useState(false);
 
   const location = useLocation();
 
@@ -42,7 +49,7 @@ const Header = () => {
   return (
     <Styles.HeaderContainer>
       <Logo />
-      {location.pathname === '/sign-in' || location.pathname === '/sign-up' ? (
+      {location.pathname !== '/' ? (
         <Styles.ReturnArrow>
           <Link to="/">
             <img src={ReturnArrow} alt="Hamburger Menu" />
@@ -50,23 +57,25 @@ const Header = () => {
         </Styles.ReturnArrow>
       ) : (
         <>
-          <Styles.NavContainer $hasUser={hasUser}>
+          <Styles.NavContainer $currentUser={!!currentUser}>
             {/* Mobile/Tablet Menu */}
             <Styles.HamburgerMenuButton onClick={toggleMobileMenu}>
               <img src={HamburgerMenuIcon} alt="Hamburger Menu" />
             </Styles.HamburgerMenuButton>
             <Styles.HamburgerNavMenu $isOpen={hamburgerMenuIsOpen}>
-              {hasUser ? (
+              {currentUser ? (
                 <>
                   <Styles.NavItem>
-                    <Link to="/profile">
+                    <Link to="/my-links">
                       <img src={PersonIcon} alt="" />
                       Minha conta
                     </Link>
                   </Styles.NavItem>
                   <Styles.NavItem>
-                    <img src={LogoutIcon} alt="" />
-                    Sair
+                    <Link to="" onClick={logout}>
+                      <img src={LogoutIcon} alt="" />
+                      Sair
+                    </Link>
                   </Styles.NavItem>
                 </>
               ) : (
@@ -87,17 +96,17 @@ const Header = () => {
 
             {/* Desktop Menu */}
             <Styles.NavMenu>
-              {hasUser ? (
+              {currentUser ? (
                 <>
                   <Styles.UserHeader>
                     <h3>
-                      Olá, <span>{user.name}</span>
+                      Olá, <span>{currentUser.name}</span>
                     </h3>
                     <button onClick={toggleDesktopMenu}>
-                      {user.image ? (
-                        <img src={user.image} alt="" width={40} height={40} />
+                      {currentUser.image ? (
+                        <img src={currentUser.image} alt="" width={40} height={40} />
                       ) : (
-                        <p>{user.name[0].toUpperCase()}</p>
+                        <p>{currentUser.name[0].toUpperCase()}</p>
                       )}
                     </button>
                     <Styles.DesktopNavMenu $isOpen={desktopMenuIsOpen}>
@@ -108,7 +117,7 @@ const Header = () => {
                         </Link>
                       </Styles.NavItem>
                       <Styles.NavItem>
-                        <Link to="" onClick={handleMenuItemClick}>
+                        <Link to="" onClick={logout}>
                           <img src={LogoutIcon} alt="" />
                           Sair
                         </Link>
